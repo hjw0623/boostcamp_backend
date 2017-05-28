@@ -3,12 +3,16 @@ package kr.or.connect.persistence;
 import java.util.Collections;
 import java.util.Map;
 
-import org.springframework.dao.DataAccessException;
-import org.springframework.jdbc.BadSqlGrammarException;
+//import org.springframework.dao.DataAccessException;
+//import org.springframework.jdbc.BadSqlGrammarException;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
+
 //import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import javax.sql.DataSource;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public class BookDao {
 	private NamedParameterJdbcTemplate jdbc;
 	private static final String COUNT_BOOK = "SELECT COUNT(*) FROM book";
