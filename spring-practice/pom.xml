@@ -18,11 +18,12 @@
 			<version>4.12</version>
 			<scope>test</scope>
 		</dependency>
+		
 		<!-- springframework 4.3.8.RELEASE -->
 		<dependency>
 		    <groupId>org.springframework</groupId>
 		    <artifactId>spring-webmvc</artifactId>
-		    <version>4.3.8.RELEASE</version>
+		    <version>4.3.7.RELEASE</version>
 		    <exclusions>
 		        <!-- Exclude Commons Logging in favor of SLF4j -->
 		        <exclusion>
@@ -31,29 +32,47 @@
 		        </exclusion>
 		    </exclusions>
 		</dependency>
+		
 		<!-- slf4j -->
 		<dependency>
 		    <groupId>org.slf4j</groupId>
 		    <artifactId>jcl-over-slf4j</artifactId>
 		    <version>1.7.22</version>
 		</dependency>
+		
 		<!-- logback -->
 		<dependency>
 		    <groupId>ch.qos.logback</groupId>
 		    <artifactId>logback-classic</artifactId>
 		    <version>1.1.8</version>
 		</dependency>
+		
 		<!-- h2 DB connection -->
 		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
 			<version>1.4.193</version>
 		</dependency>
+		
 		<!-- spring jdbc dependency -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-jdbc</artifactId>
-			<version>4.3.8.RELEASE</version>
+			<version>4.3.7.RELEASE</version>
+		</dependency>
+		
+		<!-- commons-dbcp2의존성 추가 -->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-dbcp2</artifactId>
+			<version>2.1.1</version>
+		</dependency>
+		
+		<!-- spring-context 의존성 추가 -->	
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>4.3.7.RELEASE</version>
 		</dependency>
 	</dependencies>
 	<!-- exec-maven-plugin for H2 Console -->
