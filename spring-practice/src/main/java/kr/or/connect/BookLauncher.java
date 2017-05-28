@@ -31,7 +31,10 @@ BookDao를 @Bean 애너테이션을 이용해서 등록하는 과정
 DB 접속 정보를 별도의 properties 파일로 분리
 
 실습D08: 1건 조회
-book 테이블을 id값으로 조회하는 쿼리를 실행하고 결과를 RowMapper를 이용해서 원하는 객체로 변환
+book 테이블을 id값으로 조회하는 쿼리를 실행하고 결과(ResutSet)를 RowMapper를 이용해서 원하는 객체로 변환
+
+실습D09: BeanPropertyRowMapper 활용
+
  */
 public class BookLauncher {
 
@@ -50,6 +53,12 @@ public class BookLauncher {
 		//08 query call
 		Book book = dao.selectById(1);
 		System.out.println(book);
+		
+		//10 insert
+		Book book3 = new Book("네이버 Java2", "김강산", 512);
+		Integer newId = dao.insert(book3);
+		System.out.println(newId);
+		System.out.println(dao.selectById(newId));
 		context.close();
 	}
 

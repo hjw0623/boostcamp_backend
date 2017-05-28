@@ -74,6 +74,15 @@
 			<artifactId>spring-context</artifactId>
 			<version>4.3.7.RELEASE</version>
 		</dependency>
+		
+		<!-- spring-test -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<version>4.3.7.RELEASE</version>
+			<scope>test</scope>
+		</dependency>
+		
 	</dependencies>
 	<!-- exec-maven-plugin for H2 Console -->
 	<build>
