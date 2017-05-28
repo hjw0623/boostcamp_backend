@@ -12,7 +12,7 @@ import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 //import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.apache.commons.dbcp2.BasicDataSource;
 
-
+import kr.or.connect.domain.Book;
 import kr.or.connect.persistence.BookDao;
 
 
@@ -29,6 +29,9 @@ BookDao를 @Bean 애너테이션을 이용해서 등록하는 과정
 
 실습D07: 속성 관리 도입 
 DB 접속 정보를 별도의 properties 파일로 분리
+
+실습D08: 1건 조회
+book 테이블을 id값으로 조회하는 쿼리를 실행하고 결과를 RowMapper를 이용해서 원하는 객체로 변환
  */
 public class BookLauncher {
 
@@ -43,6 +46,10 @@ public class BookLauncher {
 		BookDao dao = context.getBean(BookDao.class);
 		int count = dao.countBooks();
 		System.out.println(count);
+		
+		//08 query call
+		Book book = dao.selectById(1);
+		System.out.println(book);
 		context.close();
 	}
 
