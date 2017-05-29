@@ -40,7 +40,7 @@ public class BookDaoTest {
 		System.out.println(selected);
 		assertThat(selected.getTitle(), is("Java 웹개발"));
 	}
-	
+	//D13
 	@Test
 	public void shouldDelete(){
 		//given
@@ -53,5 +53,22 @@ public class BookDaoTest {
 		//Then
 		assertThat(affected, is(1));
 	}
-
+	//D14
+	@Test
+	public void shouldUpdate(){
+		//Given 
+		Book book = new Book("네이버 자바", "네이버", 142 );
+		Integer id = dao.insert(book);
+		
+		//When
+		book.setId(id);
+		book.setTitle("네이버 자바2");
+		int affected = dao.update(book); //영향받은 row 개수
+		
+		//Then
+		assertThat(affected, is(1));
+		Book updated = dao.selectById(id);
+		assertThat(updated.getTitle(), is("네이버 자바2"));
+		
+	}
 }
