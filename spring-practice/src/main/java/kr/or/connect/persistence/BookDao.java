@@ -85,4 +85,22 @@ public class BookDao {
 		return jdbc.queryForObject(COUNT_BOOK, params, Integer.class);
 		
 	}
+	
+	//D13 DELETE Äõ¸®
+	private static final String DELETE_BY_ID = "DELETE FROM book WHERE id= :id";
+	public int deleteById(Integer id){
+		Map<String, ?> params = Collections.singletonMap("id", id);
+		return jdbc.update(DELETE_BY_ID, params);
+	}
+	
+	//D14 UPDATE Äõ¸®
+	private static final String UPDATE = "UPDATE book SET\n"
+										+ "title = :title,"
+										+ "author = :author,"
+										+ "pages = :pages\n"
+										+ "WHERE id = :id";;
+	public int update(Book book){
+		SqlParameterSource params = new BeanPropertySqlParameterSource(book);
+		return jdbc.update(UPDATE, params);
+	}
 }
